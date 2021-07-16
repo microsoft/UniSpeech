@@ -1,3 +1,6 @@
+:: Copyright (c) Microsoft Corporation.
+:: Licensed under the MIT License.
+
 model_path=MODEL_PATH
 train_subset=pretrain_1350_16k
 valid_subset=valid_16k

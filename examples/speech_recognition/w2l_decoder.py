@@ -10,7 +10,6 @@ Wav2letter decoders.
 """
 
 import gc
-import pdb
 import itertools as it
 import os.path as osp
 import warnings

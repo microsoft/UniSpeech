@@ -1,3 +1,6 @@
+:: Copyright (c) Microsoft Corporation.
+:: Licensed under the MIT License.
+
 model_path=YOUR_MODEL_PATH
 train_subset=pretrain_HOUR_16k
 valid_subset=valSeqs_1.0_uniform_new_version_16k

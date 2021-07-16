@@ -10,7 +10,6 @@ import os
 import sys
 import numpy as np
 import logging
-import pdb
 import torch
 
 from fairseq.data import AddTargetDataset, Dictionary, FileAudioDataset, ResamplingDataset, ConcatDataset, encoders

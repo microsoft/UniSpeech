@@ -1,3 +1,6 @@
+:: Copyright (c) Microsoft Corporation.
+:: Licensed under the MIT License.
+
 model_path=MODEL_PATH
 valid_subset=en/valid_16k
 WORLD_SIZE=NUM_OF_GPUS

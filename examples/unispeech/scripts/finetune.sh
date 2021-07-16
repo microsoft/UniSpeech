@@ -1,3 +1,6 @@
+:: Copyright (c) Microsoft Corporation.
+:: Licensed under the MIT License.
+
 model_path=~/test
 pretrained_model=/datablob/users/v-chengw/commonvoice_model/ptmtls2_en1350.large.lr1e-3.64gpu.fgm0.1/checkpoint_best.pt
 train_subset=trainSeqs_1.0_uniform_new_version_16k
