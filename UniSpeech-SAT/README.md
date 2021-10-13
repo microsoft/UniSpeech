@@ -1,6 +1,6 @@
 # UniSpeech-SAT
 
-This is the official implementation of paper "UniSpeech-SAT: Universal Speech Representation Learning with  Speaker Aware Pre-Training"(```ICASSP 2022 Submission```). The implementation mainly based on [fairseq](https://github.com/pytorch/fairseq) codebase. 
+This is the official implementation of paper "[UniSpeech-SAT: Universal Speech Representation Learning with  Speaker Aware Pre-Training](https://arxiv.org/abs/2110.05752)"(```ICASSP 2022 Submission```). The implementation mainly based on [fairseq](https://github.com/pytorch/fairseq) codebase. 
 
 ## Requirements and Installation
 
@@ -42,4 +42,4 @@ f = model.feature_extractor(wav_input_16khz)
 ![alt text](SUPERB_Results.png)
 
 ## Citation
-If you find our work useful, please cite [our paper]().
+If you find our work useful, please cite [our paper](https://arxiv.org/abs/2110.05752).
