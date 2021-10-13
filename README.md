@@ -37,7 +37,7 @@ We also evaluate our models on typical speaker related benchmarks.
 | Wav2Vec2.0 (XLSR) | No| 0.564|	0.605	|1.23|   
 | **UniSpeech-SAT large** | No | **0.564** | **0.561** | **1.23** |
 
-[paper for verification](https://arxiv.org/pdf/2110.05777.pdfhttps://arxiv.org/pdf/2110.05777.pdf)
+[paper for verification](https://arxiv.org/pdf/2110.05777.pdf)
 
 Regarding reproduction, please contact [Zhengyang](https://github.com/czy97)
 
@@ -62,7 +62,6 @@ Evaluation on CALLHOME
 | ---------------- |------| ------ | ------ | ------ | ------ | ------ |
 | [EEND](https://arxiv.org/pdf/2105.09040.pdf) (SOTA)  | 7.96|	11.93	|16.38|	21.21|	23.1	|12.49||
 | **UniSpeech-SAT large** | 5.93|	10.66|	12.9	|16.48|	23.25|	10.92|
-|
 
 paper will appear soon
 
