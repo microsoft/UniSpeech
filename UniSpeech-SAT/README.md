@@ -19,7 +19,7 @@ UniSpeech-SAT Base |  [960 hrs LibriSpeech](http://www.openslr.org/12) | [downlo
 UniSpeech-SAT Base+ | [60k hrs Libri-Light](https://github.com/facebookresearch/libri-light) + [10k hrs GigaSpeech](https://github.com/SpeechColab/GigaSpeech) + [24k hrs VoxPopuli](https://github.com/facebookresearch/voxpopuli/tree/main) | [download](https://drive.google.com/file/d/1Q1MLVfyOHkSzTjyD-mzSZVjhndEmCvef/view?usp=sharing)
 UniSpeech-SAT Large | [60k hrs Libri-Light](https://github.com/facebookresearch/libri-light) + [10k hrs GigaSpeech](https://github.com/SpeechColab/GigaSpeech) + [24k hrs VoxPopuli](https://github.com/facebookresearch/voxpopuli/tree/main) | [download](https://drive.google.com/file/d/12ScE1G2W-AHcccyBb_0uVI6qpFVQ0PaI/view?usp=sharing)
 
-## Load pretrained model
+## Load pretrained models
 
 Example usage:
 
@@ -27,14 +27,14 @@ Example usage:
 import torch
 import fairseq
 
-cp_path = '/path/to/wav2vec.pt'
+cp_path = '/path/to/unispeech-sat.pt'
 model, cfg, task = fairseq.checkpoint_utils.load_model_ensemble_and_task([cp_path])
 model = model[0]
 model.remove_pretraining_modules()
 model.eval()
 
 wav_input_16khz = torch.randn(1,10000)
-f = model.feature_extractor(wav_input_16khz)
+f = model.extract_features(wav_input_16khz)[0]
 ```
 
 ## Results on [SUPERB](https://superbbenchmark.org/leaderboard)
@@ -43,3 +43,4 @@ f = model.feature_extractor(wav_input_16khz)
 
 ## Citation
 If you find our work useful, please cite [our paper](https://arxiv.org/abs/2110.05752).
+
