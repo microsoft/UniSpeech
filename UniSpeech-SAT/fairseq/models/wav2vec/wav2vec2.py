@@ -1151,7 +1151,6 @@ class TransformerSentenceEncoderLayer(nn.Module):
         gru_rel_pos: bool=False,
         expand_attention_head_size: int=-1,
         conformer_module: bool=False,
-        fp32_attention: bool=False
 
     ) -> None:
 
@@ -1175,7 +1174,6 @@ class TransformerSentenceEncoderLayer(nn.Module):
             rescale_init=rescale_init,
             gru_rel_pos=gru_rel_pos,
             expand_attention_head_size=expand_attention_head_size,
-            fp32_attention=fp32_attention,
         )
 
         self.dropout1 = nn.Dropout(dropout)

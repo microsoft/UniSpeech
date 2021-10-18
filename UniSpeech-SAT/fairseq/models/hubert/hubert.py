@@ -640,3 +640,4 @@ class HubertModel(BaseFairseqModel):
     def remove_pretraining_modules(self):
         self.target_glu = None
         self.final_proj = None
+        self.label_embs_concat = None

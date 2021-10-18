@@ -43,7 +43,6 @@ class MultiheadAttention(nn.Module):
         gru_rel_pos=False,
         expand_attention_head_size=-1,
         rescale_init=False,
-        fp32_attention=False
     ):
         super().__init__()
         self.embed_dim = embed_dim
@@ -126,7 +125,6 @@ class MultiheadAttention(nn.Module):
         self.reset_parameters()
 
         self.onnx_trace = False
-        self.fp32_attention = fp32_attention
 
     def prepare_for_onnx_export_(self):
         self.onnx_trace = True
@@ -255,7 +253,6 @@ class MultiheadAttention(nn.Module):
             # treats bias in linear module as method.
             and not torch.jit.is_scripting()
             and self.q_head_dim == self.head_dim
-            and self.fp32_attention == False
         ):
             assert key is not None and value is not None
             assert attn_mask is None
@@ -443,10 +440,7 @@ class MultiheadAttention(nn.Module):
                     dim=1,
                 )
 
-        if self.fp32_attention == False:
-            attn_weights = torch.bmm(q, k.transpose(1, 2))
-        else:
-            attn_weights = torch.bmm(q.float(), k.transpose(1, 2).float()).half()
+        attn_weights = torch.bmm(q, k.transpose(1, 2))
         attn_weights = self.apply_sparse_mask(attn_weights, tgt_len, src_len, bsz)
 
         assert list(attn_weights.size()) == [bsz * self.num_heads, tgt_len, src_len]
