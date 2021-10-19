@@ -58,12 +58,13 @@ paper will appear soon
 
 Regarding reproduction, please contact [Sanyuan](https://github.com/Sanyuan-Chen)
 
-### Speech Diarization
+### Speaker Diarization
 
 Evaluation on CALLHOME
 | Model         |spk_2	|spk_3|	spk_4|	spk_5|	spk_6|	spk_all |
 | ---------------- |------| ------ | ------ | ------ | ------ | ------ |
-| [EEND](https://arxiv.org/pdf/2105.09040.pdf) (SOTA)  | 7.96|	11.93	|16.38|	21.21|	23.1	|12.49||
+| [EEND-vector clustering](https://arxiv.org/pdf/2105.09040.pdf)   | 7.96|	11.93	|16.38|	21.21|	23.1	|12.49||
+| [EEND-EDA clustering](https://arxiv.org/abs/2107.01545) (SOTA)  | 7.11|	11.88 |14.37|	25.95|	21.95	|11.84||
 | **UniSpeech-SAT large** | 5.93|	10.66|	12.9	|16.48|	23.25|	10.92|
 
 paper will appear soon
