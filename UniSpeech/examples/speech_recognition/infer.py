@@ -12,9 +12,9 @@ import logging
 import math
 import os
 import sys
-if '/home/fairseq' in sys.path:
-    sys.path.remove('/home/fairseq')
-sys.path.append('/datablob/users/v-chengw/pyproj/fairseq')
+
+sys.path.append(os.getcwd())
+
 
 import editdistance
 import numpy as np
