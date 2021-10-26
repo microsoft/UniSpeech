@@ -8,8 +8,9 @@ The family of UniSpeech:
 > [**UniSpeech-SAT**](https://arxiv.org/pdf/2110.05752.pdf) (```ICASSP 2022 Submission```): **Universal Speech Representation Learning with  Speaker Aware Pre-Training**
 
 ## Update
+- [HuggingFace Integration] Octorber 26, 2021: [**UniSpeech-SAT**](https://huggingface.co/microsoft/unispeech-sat-large)  models are on [HuggingFace](https://huggingface.co/models?other=unispeech-sat) . 
 - [Model Release] Octorber 13, 2021: [**UniSpeech-SAT**](https://arxiv.org/pdf/2110.05752.pdf) models are releaseed.
-- [HuggingFace Integration] Octorber 11, 2021: [**UniSpeech**](https://huggingface.co/microsoft/layoutlm-base-casehttps://huggingface.co/microsoft/unispeech-large-1500h-cv)  models are on [HuggingFace](https://github.com/huggingface/transformers) . 
+- [HuggingFace Integration] Octorber 11, 2021: [**UniSpeech**](https://huggingface.co/microsoft/unispeech-large-1500h-cv)  models are on [HuggingFace](https://huggingface.co/models?other=unispeech) . 
 - [Model Release] June, 2021: [**UniSpeech v1**](https://github.com/microsoft/UniSpeech/tree/main/UniSpeech) models are released.
 ## Pre-trained models
 We strongly suggest using our UniSpeech-SAT model for speaker related tasks, since it shows very powerful performance on various speaker related benchmarks.
