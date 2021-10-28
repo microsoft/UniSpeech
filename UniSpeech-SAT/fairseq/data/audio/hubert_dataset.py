@@ -194,18 +194,9 @@ class HubertDataset(FairseqDataset):
             f"pad_audio={pad_audio}, random_crop={random_crop}, "
             f"normalize={normalize}, max_sample_size={self.max_sample_size}"
         )
-        self.duplicate = 0
-        self.sum = 0
 
     def set_epoch(self, epoch):
-        print('epoch', epoch)
-        print(f'duplicate: {self.duplicate}, sum: {self.sum}, avg: {self.duplicate/self.sum}')
-
         self.epoch = epoch
-
-    def load_audio(manifest_path, max_keep, min_keep):
-        
-        return root, names, inds, tot, sizes
 
     def batch_by_size(self, indices, max_tokens=None, max_sentences=None, required_batch_size_multiple=1):
         self.max_tokens = max_tokens
@@ -303,13 +294,6 @@ class HubertDataset(FairseqDataset):
         # target = max(sizes) -> random_crop not used
         # target = max_sample_size -> random_crop used for long
         samples = [s for s in samples if s["source"] is not None]
-        idx = torch.tensor([int(self.audio_names[s["id"]].split('/')[1]) for s in samples if s["id"] is not None])
-        self.duplicate += idx.shape[0] - idx.unique().shape[0]
-        self.sum += idx.shape[0]
-        if self.sum // 10000 != (self.sum - idx.shape[0]) // 10000 or self.sum > 281200:
-            print(idx)
-            print(f'duplicate: {self.duplicate}, sum: {self.sum}, avg: {self.duplicate / self.sum}')
-
         if len(samples) == 0:
             return {}
 
@@ -474,7 +458,6 @@ class HubertDataset(FairseqDataset):
                 return np.lexsort(order)[::-1]
         else:
             return np.arange(len(self))
-
 
     def postprocess(self, wav, cur_sample_rate):
         if wav.dim() == 2:
