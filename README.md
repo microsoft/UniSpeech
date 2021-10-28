@@ -3,6 +3,8 @@
 <!--**Pre-trained models for speech related tasks**-->
 
 The family of UniSpeech:
+> [**WavLM**](https://arxiv.org/pdf/2110.13900.pdf) (```arXiv```): **WavLM: Large-Scale Self-Supervised  Pre-training   for Full Stack Speech Processing**
+
 > [**UniSpeech**](https://github.com/microsoft/UniSpeech/tree/main/UniSpeech) (```ICML 2021```): **Unified Pre-training for Self-Supervised Learning and Supervised Learning for ASR**
 
 > [**UniSpeech-SAT**](https://arxiv.org/pdf/2110.05752.pdf) (```ICASSP 2022 Submission```): **Universal Speech Representation Learning with  Speaker Aware Pre-Training**
@@ -32,14 +34,15 @@ We also evaluate our models on typical speaker related benchmarks.
 | ECAPA-TDNN   | - | 0.87     | 1.12  | 2.12   |
 | HuBERT large  | Yes|  0.888	|0.912|	1.853 |
 | Wav2Vec2.0 (XLSR)| Yes | 0.915|	0.945	|1.895|
-| **UniSpeech-SAT large** | Yes | 0.771	| 0.781|	1.669|
+| UniSpeech-SAT large | Yes | 0.771	| 0.781|	1.669|
+| WavLM large | Yes | 0.638	| 0.687|	1.457|
 | HuBERT large | No| 0.585|	0.654	|1.342|   
 | Wav2Vec2.0 (XLSR) | No| 0.564|	0.605	|1.23|   
-| **UniSpeech-SAT large** | No | **0.564** | **0.561** | **1.23** |
+| UniSpeech-SAT large | No | 0.564 | 0.561 | 1.23 |
+| **WavLM large** | No | **0.431** | **0.538**| **1.154** |
 
-[paper for verification](https://arxiv.org/pdf/2110.05777.pdf)
+[Our paper for verification](https://arxiv.org/pdf/2110.05777.pdf)
 
-Regarding reproduction, please contact [Zhengyang](https://github.com/czy97)
 
 
 ### Speech Separation
@@ -48,12 +51,11 @@ Evaluation on [LibriCSS](https://github.com/chenzhuo1011/libri_css)
 | Model         |0S | 0L | OV10     |      OV20     |OV30 |OV40 |
 | ---------------- |------| ------ | ------ | ------ | ------ | ------ |
 | [Conformer](https://ieeexplore.ieee.org/abstract/document/9413423/) (SOTA)   | 4.5	| 4.4	|6.2	|8.5|	11	|12.6|
-| **UniSpeech-SAT base** | 4.4|	4.4	|5.4|	7.2|	9.2	|10.5|
-| **UniSpeech-SAT large** | 4.3|	4.2	|5.0	|6.3|	8.2|	8.8|
+| UniSpeech-SAT base | 4.4|	4.4	|5.4|	7.2|	9.2	|10.5|
+| UniSpeech-SAT large | 4.3|	4.2	|5.0	|6.3|	8.2|	8.8|
+| WavLM base+ | 4.5|	4.4	|5.6|	7.5|	9.4	|10.9|
+| **WavLM large** | 4.2| 4.1	| 4.8	| 5.8 |	7.4|	8.5|
 
-paper will appear soon
-
-Regarding reproduction, please contact [Sanyuan](https://github.com/Sanyuan-Chen)
 
 ### Speech Diarization
 
@@ -61,11 +63,9 @@ Evaluation on CALLHOME
 | Model         |spk_2	|spk_3|	spk_4|	spk_5|	spk_6|	spk_all |
 | ---------------- |------| ------ | ------ | ------ | ------ | ------ |
 | [EEND](https://arxiv.org/pdf/2105.09040.pdf) (SOTA)  | 7.96|	11.93	|16.38|	21.21|	23.1	|12.49||
-| **UniSpeech-SAT large** | 5.93|	10.66|	12.9	|16.48|	23.25|	10.92|
-
-paper will appear soon
-
-Regarding reproduction, please contact [Zhengyang](https://github.com/czy97)
+| UniSpeech-SAT large | 5.93|	10.66|	12.9	|16.48|	23.25|	10.92|
+| WavLM Base| 6.99|	11.12|	15.20	|16.48|	21.61|	11.75|
+| **WavLm large** | 6.46|	10.69|	11.84	|12.89|	20.70|	10.35|
 
 ## License
 This project is licensed under the license found in the LICENSE file in the root directory of this source tree.
@@ -75,10 +75,48 @@ Portions of the source code are based on the [FAIRSEQ](https://github.com/pytorc
 
 
 ### Reference
-If you find Our work is useful in your research, please cite the following paper:
+If you find our work is useful in your research, please cite the following paper:
+``` latex
+@inproceedings{Wang2021UniSpeech,
+  author    = {Chengyi Wang and Yu Wu and Yao Qian and Kenichi Kumatani and Shujie Liu and Furu Wei and Michael Zeng and Xuedong Huang},
+  editor    = {Marina Meila and Tong Zhang},
+  title     = {UniSpeech: Unified Speech Representation Learning with Labeled and
+               Unlabeled Data},
+  booktitle = {Proceedings of the 38th International Conference on Machine Learning,
+               {ICML} 2021, 18-24 July 2021, Virtual Event},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {139},
+  pages     = {10937--10947},
+  publisher = {{PMLR}},
+  year      = {2021},
+  url       = {http://proceedings.mlr.press/v139/wang21y.html},
+  timestamp = {Thu, 21 Oct 2021 16:06:12 +0200},
+  biburl    = {https://dblp.org/rec/conf/icml/0002WQK0WZ021.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+```
 
-[UniSpeech: Unified Speech Representation Learning with Labeled and Unlabeled Data](https://arxiv.org/abs/2101.07597)
+``` latex
+@article{Chen2021WavLM,
+  title   = {WavLM: Large-Scale Self-Supervised  Pre-training   for Full Stack Speech Processing},
+  author  = {Sanyuan Chen and Chengyi Wang and Zhengyang Chen and Yu Wu and Shujie Liu and Zhuo Chen and Jinyu Li and Naoyuki Kanda and Takuya Yoshioka and Xiong Xiao and Jian Wu and Long Zhou and Shuo Ren and Yanmin Qian and Yao Qian and Jian Wu and Micheal Zeng and Furu Wei},
+  eprint={2110.13900},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  year={2021}
+}
+```
 
+``` latex
+@article{Chen2021UniSpeechSAT,
+  title   = {UniSpeech-SAT: Universal Speech Representation Learning with  Speaker Aware Pre-Training},
+  author  = {Sanyuan Chen and Yu Wu and Chengyi Wang and Zhengyang Chen and Zhuo Chen and Shujie Liu and   Jian Wu and Yao Qian and Furu Wei and Jinyu Li and  Xiangzhan Yu},
+  eprint={2110.05752},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  year={2021}
+}
+```
 [UniSpeech-SAT: Universal Speech Representation Learning with  Speaker Aware Pre-Training](https://arxiv.org/pdf/2110.05752.pdf)
 
 ### Contact Information
