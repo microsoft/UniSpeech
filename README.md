@@ -128,7 +128,7 @@ If you find our work is useful in your research, please cite the following paper
   year={2021}
 }
 ```
-[UniSpeech-SAT: Universal Speech Representation Learning with  Speaker Aware Pre-Training](https://arxiv.org/pdf/2110.05752.pdf)
+
 
 ### Contact Information
 
