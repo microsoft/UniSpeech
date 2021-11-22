@@ -1,0 +1,11 @@
+soundfile
+fire
+sentencepiece
+tqdm
+pyyaml
+h5py
+yamlargparse
+sklearn
+matplotlib
+torchaudio
+s3rpl
