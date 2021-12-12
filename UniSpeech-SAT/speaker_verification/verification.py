@@ -2,7 +2,7 @@ import soundfile as sf
 import torch
 import fire
 import torch.nn.functional as F
-from torchaudio.functional import resample
+from torchaudio.transforms import Resample
 from models.ecapa_tdnn import ECAPA_TDNN_SMALL
 
 MODEL_LIST = ['ecapa_tdnn', 'hubert_large', 'wav2vec2_xlsr', 'unispeech_sat']
@@ -37,8 +37,10 @@ def verification(model_name,  wav1, wav2, use_gpu=True, checkpoint=None):
 
     wav1 = torch.from_numpy(wav1).unsqueeze(0).float()
     wav2 = torch.from_numpy(wav2).unsqueeze(0).float()
-    wav1 = resample(wav1, orig_freq=sr1, new_freq=16000)
-    wav2 = resample(wav2, orig_freq=sr2, new_freq=16000)
+    resample1 = Resample(orig_freq=sr1, new_freq=16000)
+    resample2 = Resample(orig_freq=sr2, new_freq=16000)
+    wav1 = resample1(wav1)
+    wav2 = resample2(wav2)
 
     if use_gpu:
         model = model.cuda()
