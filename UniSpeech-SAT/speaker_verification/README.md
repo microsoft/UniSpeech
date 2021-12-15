@@ -16,7 +16,7 @@
 
 #### Environment Setup
 
-1. `pip install -r requirements.txt`
+1. `pip install --require-hashes -r requirements.txt`
 2. Install fairseq code
    - For HuBERT_Large and Wav2Vec2.0 (XLSR), we should install the official [fairseq](https://github.com/pytorch/fairseq).
    - For UniSpeech-SAT large, we should install the [Unispeech-SAT](https://github.com/microsoft/UniSpeech/tree/main/UniSpeech-SAT) fairseq code.
