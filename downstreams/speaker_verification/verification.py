@@ -5,13 +5,19 @@ import torch.nn.functional as F
 from torchaudio.transforms import Resample
 from models.ecapa_tdnn import ECAPA_TDNN_SMALL
 
-MODEL_LIST = ['ecapa_tdnn', 'hubert_large', 'wav2vec2_xlsr', 'unispeech_sat']
+MODEL_LIST = ['ecapa_tdnn', 'hubert_large', 'wav2vec2_xlsr', 'unispeech_sat', "wavlm_base_plus", "wavlm_large"]
 
 
 def init_model(model_name, checkpoint=None):
     if model_name == 'unispeech_sat':
         config_path = 'config/unispeech_sat.th'
         model = ECAPA_TDNN_SMALL(feat_dim=1024, feat_type='unispeech_sat', config_path=config_path)
+    elif model_name == 'wavlm_base_plus':
+        config_path = None
+        model = ECAPA_TDNN_SMALL(feat_dim=768, feat_type='wavlm_base_plus', config_path=config_path)
+    elif model_name == 'wavlm_large':
+        config_path = None
+        model = ECAPA_TDNN_SMALL(feat_dim=1024, feat_type='wavlm_large', config_path=config_path)
     elif model_name == 'hubert_large':
         config_path = None
         model = ECAPA_TDNN_SMALL(feat_dim=1024, feat_type='hubert_large_ll60k', config_path=config_path)
