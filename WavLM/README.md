@@ -17,14 +17,34 @@ WavLM Base |  [960 hrs LibriSpeech](http://www.openslr.org/12)| -  | [Azure Stor
 WavLM Base+ | [60k hrs Libri-Light](https://github.com/facebookresearch/libri-light) + [10k hrs GigaSpeech](https://github.com/SpeechColab/GigaSpeech) + [24k hrs VoxPopuli](https://github.com/facebookresearch/voxpopuli/tree/main)| -  |  [Azure Storage](https://msranlcmtteamdrive.blob.core.windows.net/share/wavlm/WavLM-Base+.pt?sv=2020-04-08&st=2021-11-05T00%3A34%3A47Z&se=2022-10-06T00%3A34%3A00Z&sr=b&sp=r&sig=Gkf1IByHaIn1t%2FVEd9D6WHjZ3zu%2Fk5eSdoj21UytKro%3D) <br> [Google Drive](https://drive.google.com/file/d/1PlbT_9_B4F9BsD_ija84sUTVw7almNX8/view?usp=sharing) 
 WavLM Large | [60k hrs Libri-Light](https://github.com/facebookresearch/libri-light) + [10k hrs GigaSpeech](https://github.com/SpeechColab/GigaSpeech) + [24k hrs VoxPopuli](https://github.com/facebookresearch/voxpopuli/tree/main)| -  | [Azure Storage](https://msranlcmtteamdrive.blob.core.windows.net/share/wavlm/WavLM-Large.pt?sv=2020-08-04&st=2021-11-22T10%3A03%3A53Z&se=2022-11-23T10%3A03%3A00Z&sr=b&sp=r&sig=3kB8dwTCyIS8YQ7gW5oXmDrXV%2FAaLmoxBS37oPpFsz4%3D) <br> [Google Drive](https://drive.google.com/file/d/1p8nbj16b7YA16sqPZ4E0JUL-oIDUBGwU/view?usp=sharing) 
 
-## Fine-Tuning 
-The authors are preparing simple, clear, and well-documented fine-tuning code of WavLM. The pre-trained models will also release as long as the  fine-tuning code is done.  Stay tuned! 
+## Load Pre-Trained Models for Inference
+
+```python
+import torch
+from WavLM import WavLM, WavLMConfig
+
+# load the pre-trained checkpoints
+checkpoint = torch.load('/path/to/wavlm.pt')
+cfg = WavLMConfig(checkpoint['cfg'])
+model = WavLM(cfg)
+model.load_state_dict(checkpoint['model'])
+model.eval()
+
+# extract the the representation of last layer
+wav_input_16khz = torch.randn(1,10000)
+rep = model.extract_features(wav_input_16khz)[0]
+
+# extract the the representation of each layer
+wav_input_16khz = torch.randn(1,10000)
+rep, layer_results = model.extract_features(wav_input_16khz, output_layer=model.cfg.encoder_layers, ret_layer_results=True)[0]
+layer_reps = [x.transpose(0, 1) for x, _ in layer_results]
+```
 
 
 ## Universal Representation Evaluation on SUPERB 
-![alt text](SUPERB_Results.png)
+![alt text](WavLM_SUPERB_Results.png)
 
-![alt text](screenshot.png)
+![alt text](WavLM_SUPERB_Leaderboard.png)
 ## Downstream Task Performance 
 We also evaluate our models on typical speech processing benchmarks.
 ### Speaker Verification
@@ -36,7 +56,8 @@ Evaluate on the [VoxCeleb](https://www.robots.ox.ac.uk/~vgg/data/voxceleb/#:~:te
 | ECAPA-TDNN   | - | 0.87     | 1.12  | 2.12   |
 | HuBERT large  | Yes|  0.888	|0.912|	1.853 |
 | Wav2Vec2.0 (XLSR)| Yes | 0.915|	0.945	|1.895|
-| **UniSpeech-SAT large** | Yes | 0.771	| 0.781|	1.669|
+| UniSpeech-SAT large | Yes | 0.771	| 0.781|	1.669|
+| WavLM large | Yes | 0.638    | 0.687|        1.457|
 | HuBERT large | No| 0.585|	0.654	|1.342|   
 | Wav2Vec2.0 (XLSR) | No| 0.564|	0.605	|1.23|   
 | UniSpeech-SAT large | No | 0.564 | 0.561| 1.23 |
@@ -73,7 +94,7 @@ Evaluation on the [CALLHOME](https://arxiv.org/pdf/1909.06247.pdf)
 ### Speech Recogntion
 Evaluate on the [LibriSpeech](https://www.openslr.org/12)
 
-![alt text](ASR.PNG)
+![alt text](WavLM_ASR.PNG)
 
 
 ## License
