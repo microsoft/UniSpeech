@@ -658,6 +658,16 @@ class TransformerEncoder(nn.Module):
             self.num_buckets = 0
             self.max_distance = 0
 
+        if hasattr(args, "gru_rel_pos"):
+            self.gru_rel_pos = args.gru_rel_pos
+        else:
+            self.gru_rel_pos = False
+
+        if hasattr(args, "expand_attention_head_size"):
+            self.expand_attention_head_size = args.expand_attention_head_size
+        else:
+            self.expand_attention_head_size = -1
+
         self.layers = nn.ModuleList(
             [
                 TransformerSentenceEncoderLayer(
@@ -672,8 +682,8 @@ class TransformerEncoder(nn.Module):
                     has_relative_attention_bias=(self.relative_position_embedding and i == 0),
                     num_buckets=self.num_buckets,
                     max_distance=self.max_distance,
-                    gru_rel_pos=args.gru_rel_pos,
-                    expand_attention_head_size=args.expand_attention_head_size,
+                    gru_rel_pos=self.gru_rel_pos,
+                    expand_attention_head_size=self.expand_attention_head_size,
                 )
                 for i in range(args.encoder_layers)
             ]
@@ -712,8 +722,6 @@ class TransformerEncoder(nn.Module):
 
         layer_results = []
         z = None
-        if tgt_layer is not None:
-            layer_results.append((x, z))
         r = None
         pos_bias = None
         for i, layer in enumerate(self.layers):
@@ -721,11 +729,13 @@ class TransformerEncoder(nn.Module):
             if not self.training or (dropout_probability > self.layerdrop):
                 x, z, pos_bias = layer(x, self_attn_padding_mask=padding_mask, need_weights=False,
                                        self_attn_mask=streaming_mask, pos_bias=pos_bias)
-            if tgt_layer is not None:
+            if isinstance(tgt_layer, list) and i+1 in tgt_layer:
                 layer_results.append((x, z))
-            if i == tgt_layer:
+            elif isinstance(tgt_layer, int) and i == tgt_layer:
                 r = x
                 break
+            else:
+                continue
 
         if r is not None:
             x = r

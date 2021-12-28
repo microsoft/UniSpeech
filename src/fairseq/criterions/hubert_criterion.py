@@ -11,6 +11,7 @@ from typing import List, Optional
 import torch
 import torch.nn.functional as F
 from fairseq import metrics, utils
+from fairseq.models.hubert import ILSHubertModel
 from fairseq.criterions import FairseqCriterion, register_criterion
 from fairseq.dataclass import FairseqDataclass
 
@@ -70,6 +71,10 @@ class HubertCriterion(FairseqCriterion):
             loss_m_list.append(loss_m)
             logging_output[f"loss_m_{i}"] = loss_m.detach().item()
         if self.pred_masked_weight > 0:
+            if isinstance(model, ILSHubertModel):
+                if model.weighted_sum:
+                    norm_weights = F.softmax(model.weights, dim=-1)
+                    loss_m_list = norm_weights * torch.stack(loss_m_list, dim=0)
             loss += self.pred_masked_weight * sum(loss_m_list)
             sample_size += targ_m_list[0].numel()
 
@@ -82,6 +87,9 @@ class HubertCriterion(FairseqCriterion):
             loss_u_list.append(loss_u)
             logging_output[f"loss_u_{i}"] = loss_u.detach().item()
         if self.pred_nomask_weight > 0:
+            if model.weighted_sum:
+                norm_weights = F.softmax(model.weights, dim=-1)
+                loss_u_list = norm_weights * torch.stack(loss_u_list, dim=0)
             loss += self.pred_nomask_weight * sum(loss_u_list)
             sample_size += targ_u_list[0].numel()
 

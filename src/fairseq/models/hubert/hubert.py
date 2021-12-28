@@ -16,7 +16,7 @@ from fairseq.data.data_utils import compute_mask_indices
 from fairseq.data.dictionary import Dictionary
 from fairseq.dataclass import ChoiceEnum, FairseqDataclass
 from fairseq.models import BaseFairseqModel, register_model
-from fairseq.models.wav2vec.wav2vec2 import (
+from fairseq.models.wavlm.wavlm import (
     ConvFeatureExtractionModel,
     TransformerEncoder,
 )
