@@ -923,11 +923,13 @@ class TransformerEncoder(nn.Module):
             dropout_probability = np.random.random()
             if not self.training or (dropout_probability > self.layerdrop):
                 x, z, pos_bias = layer(x, self_attn_padding_mask=padding_mask, need_weights=False, self_attn_mask=streaming_mask, pos_bias=pos_bias)
-                if tgt_layer is not None:
-                    layer_results.append((x, z))
-            if i == tgt_layer:
+            if isinstance(tgt_layer, list) and i+1 in tgt_layer:
+                layer_results.append((x, z))
+            elif isinstance(tgt_layer, int) and i == tgt_layer:
                 r = x
                 break
+            else:
+                continue
 
         if r is not None:
             x = r

@@ -5,3 +5,4 @@
 
 from .hubert import *  # noqa
 from .hubert_asr import *  # noqa
+from .ils_hubert import *
