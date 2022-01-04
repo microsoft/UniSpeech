@@ -8,8 +8,9 @@ The data preparation and pre-training for the first iteration follow the same pi
 ## Pre-Trained and Fine-tuned Models
 Model | Pretraining Dataset | Finetuning Dataset | Model
 |---|---|---|---
-ILS-Base | 960h LibriSpeech | - |comming soon
-ILS-Large | 60k hrs Libri-Light | - |comming soon
+ILS-Base | 960h LibriSpeech | - | [Download](https://msranlcmtteamdrive.blob.core.windows.net/teamdrive/v-chengw/models/el_hubert_4_12/checkpoint_best.pt?st=2022-01-04T08%3A05%3A24Z&se=2024-01-05T08%3A05%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=JI8ZOgBhrrKUY4DE2ommnKpyAUuX6OrHfWgdjAT2Xnc%3D)
+ILS-Large | 60k hrs Libri-Light | - | [Download](https://msranlcmtteamdrive.blob.core.windows.net/teamdrive/v-chengw/models/ils_hubert_large/checkpoint_fixed.pt?st=2022-01-04T08%3A24%3A37Z&se=2025-01-05T08%3A24%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=Dv6svAaI7Td%2BZWUTjTFkhChFbpnAAU6xKNjPbPQnIKM%3D)
+ILS-Large | 60k hrs Libri-Light | 960h LibriSpeech | [Download](https://msranlcmtteamdrive.blob.core.windows.net/teamdrive/v-chengw/models/ils_hubert_large/checkpoint_ft.pt?st=2022-01-04T08%3A40%3A17Z&se=2025-01-05T08%3A40%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=GKIe%2F1kz%2F1fjGTsQsakJy68jlsFDbKmIVYjH61dhrwA%3D)
 
 
 ## Results on Librispeech
