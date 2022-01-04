@@ -8,6 +8,7 @@ The family of UniSpeech:
 > [**UniSpeech**](https://github.com/microsoft/UniSpeech/tree/main/UniSpeech) (```ICML 2021```): **Unified Pre-training for Self-Supervised Learning and Supervised Learning for ASR**
 
 > [**UniSpeech-SAT**](https://arxiv.org/pdf/2110.05752.pdf) (```ICASSP 2022 Submission```): **Universal Speech Representation Learning with  Speaker Aware Pre-Training**
+
 > [**ILS-SSL**](https://arxiv.org/pdf/2112.08778.pdf) (```ICASSP 2022 Submission```): **Self-Supervised Learning for Speech Recognition with Intermediate Layer Supervision**
 
 ## Update
