@@ -11,7 +11,10 @@ The family of UniSpeech:
 
 > [**ILS-SSL**](https://arxiv.org/pdf/2112.08778.pdf) (```ICASSP 2022 Submission```): **Self-Supervised Learning for Speech Recognition with Intermediate Layer Supervision**
 
+Model introductions, evaluation results, and model inference instructions are located in their corresponding folders. The source code is here [https://github.com/microsoft/UniSpeech/tree/main/src].
+
 ## Update
+- [HuggingFace Integration] Dec 23, 2021: [**WavLM**](https://huggingface.co/models?other=wavlm)  models are on [HuggingFace](https://huggingface.co/models?other=wavlm) . 
 - [HuggingFace Integration] Octorber 26, 2021: [**UniSpeech-SAT**](https://huggingface.co/microsoft/unispeech-sat-large)  models are on [HuggingFace](https://huggingface.co/models?other=unispeech-sat) . 
 - [Model Release] Octorber 13, 2021: [**UniSpeech-SAT**](https://arxiv.org/pdf/2110.05752.pdf) models are releaseed.
 - [HuggingFace Integration] Octorber 11, 2021: [**UniSpeech**](https://huggingface.co/microsoft/unispeech-large-1500h-cv)  models are on [HuggingFace](https://huggingface.co/models?other=unispeech) . 
