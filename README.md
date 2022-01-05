@@ -41,7 +41,7 @@ WavLM Base+ | [60k hrs Libri-Light](https://github.com/facebookresearch/libri-li
 WavLM Large | [60k hrs Libri-Light](https://github.com/facebookresearch/libri-light) + [10k hrs GigaSpeech](https://github.com/SpeechColab/GigaSpeech) + [24k hrs VoxPopuli](https://github.com/facebookresearch/voxpopuli/tree/main)| -  | [Azure Storage](https://msranlcmtteamdrive.blob.core.windows.net/share/wavlm/WavLM-Large.pt?sv=2020-08-04&st=2021-11-22T10%3A03%3A53Z&se=2022-11-23T10%3A03%3A00Z&sr=b&sp=r&sig=3kB8dwTCyIS8YQ7gW5oXmDrXV%2FAaLmoxBS37oPpFsz4%3D) <br> [Google Drive](https://drive.google.com/file/d/1p8nbj16b7YA16sqPZ4E0JUL-oIDUBGwU/view?usp=sharing) 
 
 ## Universal Representation Evaluation on SUPERB 
-![alt text](UniSpeech-SAT/SUPERB_Results.png)
+![alt text](WavLM/WavLM_SUPERB_Results.png)
 
 ## Downstream Task Performance 
 We also evaluate our models on typical speaker related benchmarks.
