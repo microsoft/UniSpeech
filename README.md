@@ -38,7 +38,7 @@ UniSpeech-SAT Base+ | [60k hrs Libri-Light](https://github.com/facebookresearch/
 UniSpeech-SAT Large | [60k hrs Libri-Light](https://github.com/facebookresearch/libri-light) + [10k hrs GigaSpeech](https://github.com/SpeechColab/GigaSpeech) + [24k hrs VoxPopuli](https://github.com/facebookresearch/voxpopuli/tree/main) | - | [download](https://drive.google.com/file/d/12ScE1G2W-AHcccyBb_0uVI6qpFVQ0PaI/view?usp=sharing)
 WavLM Base |  [960 hrs LibriSpeech](http://www.openslr.org/12)| -  | [Azure Storage](https://msranlcmtteamdrive.blob.core.windows.net/share/wavlm/WavLM-Base.pt?sv=2020-04-08&st=2021-11-05T00%3A35%3A31Z&se=2022-11-06T00%3A35%3A00Z&sr=b&sp=r&sig=JljnRVzyHY6AjHzhVmHV5KyQQCvvGfgp9D2M02oGJBU%3D) <br> [Google Drive](https://drive.google.com/file/d/19-C7SMQvEFAYLG5uc47NX_MY03JCbI4x/view?usp=sharing)
 WavLM Base+ | [60k hrs Libri-Light](https://github.com/facebookresearch/libri-light) + [10k hrs GigaSpeech](https://github.com/SpeechColab/GigaSpeech) + [24k hrs VoxPopuli](https://github.com/facebookresearch/voxpopuli/tree/main)| -  |  [Azure Storage](https://msranlcmtteamdrive.blob.core.windows.net/share/wavlm/WavLM-Base+.pt?sv=2020-04-08&st=2021-11-05T00%3A34%3A47Z&se=2022-10-06T00%3A34%3A00Z&sr=b&sp=r&sig=Gkf1IByHaIn1t%2FVEd9D6WHjZ3zu%2Fk5eSdoj21UytKro%3D) <br> [Google Drive](https://drive.google.com/file/d/1PlbT_9_B4F9BsD_ija84sUTVw7almNX8/view?usp=sharing) 
-WavLM Large | [60k hrs Libri-Light](https://github.com/facebookresearch/libri-light) + [10k hrs GigaSpeech](https://github.com/SpeechColab/GigaSpeech) + [24k hrs VoxPopuli](https://github.com/facebookresearch/voxpopuli/tree/main)| -  | [Azure Storage](https://msranlcmtteamdrive.blob.core.windows.net/share/wavlm/WavLM-Large.pt?sv=2020-08-04&st=2021-11-22T10%3A03%3A53Z&se=2022-11-23T10%3A03%3A00Z&sr=b&sp=r&sig=3kB8dwTCyIS8YQ7gW5oXmDrXV%2FAaLmoxBS37oPpFsz4%3D) <br> [Google Drive](https://drive.google.com/file/d/1p8nbj16b7YA16sqPZ4E0JUL-oIDUBGwU/view?usp=sharing) 
+WavLM Large | [60k hrs Libri-Light](https://github.com/facebookresearch/libri-light) + [10k hrs GigaSpeech](https://github.com/SpeechColab/GigaSpeech) + [24k hrs VoxPopuli](https://github.com/facebookresearch/voxpopuli/tree/main)| -  | [Azure Storage](https://msranlcmtteamdrive.blob.core.windows.net/share/wavlm/WavLM-Large.pt?sv=2020-08-04&st=2021-11-22T10%3A03%3A53Z&se=2022-11-23T10%3A03%3A00Z&sr=b&sp=r&sig=3kB8dwTCyIS8YQ7gW5oXmDrXV%2FAaLmoxBS37oPpFsz4%3D) <br> [Google Drive](https://drive.google.com/file/d/1rMu6PQ9vz3qPz4oIm72JDuIr5AHIbCOb/view?usp=sharing) 
 
 ## Universal Representation Evaluation on SUPERB 
 ![alt text](WavLM/WavLM_SUPERB_Results.png)
@@ -46,7 +46,7 @@ WavLM Large | [60k hrs Libri-Light](https://github.com/facebookresearch/libri-li
 ## Downstream Task Performance 
 We also evaluate our models on typical speaker related benchmarks.
 ### Speaker Verification
-Evaluate on the [VoxCeleb1](https://www.robots.ox.ac.uk/~vgg/data/voxceleb/#:~:text=VoxCeleb%20is%20an%20audio%2Dvisual,interview%20videos%20uploaded%20to%20YouTube)
+Finetune the model with VoxCeleb2 dev data, and evaluate it on the [VoxCeleb1](https://www.robots.ox.ac.uk/~vgg/data/voxceleb/#:~:text=VoxCeleb%20is%20an%20audio%2Dvisual,interview%20videos%20uploaded%20to%20YouTube)
 | Model         |Fix pre-train| Vox1-O | Vox1-E     | Vox1-H         |
 | ------------- |------------- | ---------- | ---------- | ---------- |
 | ECAPA-TDNN   | - | 0.87     | 1.12  | 2.12   |
@@ -54,6 +54,8 @@ Evaluate on the [VoxCeleb1](https://www.robots.ox.ac.uk/~vgg/data/voxceleb/#:~:t
 | Wav2Vec2.0 (XLSR)| Yes | 0.915|	0.945	|1.895|
 | UniSpeech-SAT large | Yes | 0.771	| 0.781|	1.669|
 | WavLM large | Yes | 0.59	| 0.65|	1.328|
+| WavLM large | No | 0.505	| 0.579|	1.176|
+|+Large Margin Finetune and Score Calibration|
 | HuBERT large | No| 0.585|	0.654	|1.342|   
 | Wav2Vec2.0 (XLSR) | No| 0.564|	0.605	|1.23|   
 | UniSpeech-SAT large | No | 0.564 | 0.561| 1.23 |
