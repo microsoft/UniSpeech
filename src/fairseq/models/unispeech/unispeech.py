@@ -63,6 +63,9 @@ class Unispeech(BaseFairseqModel):
         x = self.w2v_encoder(**kwargs)
         return x
 
+    def remove_pretraining_modules(self):
+        self.w2v_encoder.proj = None
+
 class Wav2VecEncoder(FairseqEncoder):
     def __init__(self, cfg, task):
         super().__init__(task.source_dictionary)
