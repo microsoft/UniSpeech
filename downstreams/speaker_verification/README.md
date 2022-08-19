@@ -5,9 +5,9 @@
 | Model                                                        | Fix pre-train | Vox1-O    | Vox1-E    | Vox1-H   |
 | ------------------------------------------------------------ | ------------- | --------- | --------- | -------- |
 | [ECAPA-TDNN](https://drive.google.com/file/d/1kWmLyTGkBExTdxtwmrXoP4DhWz_7ZAv3/view?usp=sharing) | -             | 1.080     | 1.200     | 2.127    |
-| [HuBERT large](https://drive.google.com/file/d/1cQAPIzg8DJASZyAYdaBN0gRa8piPQTMo/view?usp=sharing) | Yes           | 0.888     | 0.912     | 1.853    |
-| [Wav2Vec2.0 (XLSR)](https://drive.google.com/file/d/1FiGokGtF2d7rkD9OpqLiQxKSqppTSXbl/view?usp=sharing) | Yes           | 0.915     | 0.945     | 1.895    |
-| [UniSpeech-SAT large](https://drive.google.com/file/d/1W6KRt5Ci2T7_xPVdlE3JGdQG2KTrZ750/view?usp=sharing) | Yes           | 0.771     | 0.781     | 1.669    |
+| [HuBERT large](https://drive.google.com/file/d/1njofuGpidjy_jdbq7rIbQMIDyyPLoAjb/view?usp=sharing) | Yes           | 0.888     | 0.912     | 1.853    |
+| [Wav2Vec2.0 (XLSR)](https://drive.google.com/file/d/1izV48ebxs6re252ELiksuk6-RQov-gvE/view?usp=sharing) | Yes           | 0.915     | 0.945     | 1.895    |
+| [UniSpeech-SAT large](https://drive.google.com/file/d/1sOhutb3XG7_OKQIztqjePDtRMrxjOdSf/view?usp=sharing) | Yes           | 0.771     | 0.781     | 1.669    |
 | [WavLM Base](https://drive.google.com/file/d/1qVKHG7OzltELgkoAdFT1xXzu_hHXj3e8/view?usp=sharing) | Yes             | 0.84     | 0.928     | 1.758    |
 | [**WavLM large**](https://drive.google.com/file/d/1D-dPa5H6Y2ctb4SJ5n21kRkdR6t0-awD/view?usp=sharing) | Yes           | 0.75     | 0.764     | 1.548    |
 | [HuBERT large](https://drive.google.com/file/d/1nit9Z6RyM8Sdb3n8ccaglOQVNnqsjnui/view?usp=sharing) | No            | 0.585     | 0.654     | 1.342    |
