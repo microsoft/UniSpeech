@@ -13,7 +13,7 @@
 | [HuBERT large](https://drive.google.com/file/d/1nit9Z6RyM8Sdb3n8ccaglOQVNnqsjnui/view?usp=sharing) | No            | 0.585     | 0.654     | 1.342    |
 | [Wav2Vec2.0 (XLSR)](https://drive.google.com/file/d/1TgKro9pp197TCgIF__IlE_rMVQOk50Eb/view?usp=sharing) | No            | 0.564     | 0.605     | 1.23     |
 | [UniSpeech-SAT large](https://drive.google.com/file/d/10o6NHZsPXJn2k8n57e8Z_FkKh3V4TC3g/view?usp=sharing) | No            | 0.564 | 0.561 | 1.23 |
-| [**WavLM large**](https://drive.google.com/file/d/18rekjal9NPo0VquVtali-80yy63252RX/view?usp=sharing) | No            | **0.431** | **0.538** | **1.154** |
+| [**WavLM large**](https://drive.google.com/file/d/1-aE1NfzpRCLxA4GUxX9ITI3F9LlbtEGP/view?usp=sharing) | No            | **0.431** | **0.538** | **1.154** |
 
 ### How to use?
 
