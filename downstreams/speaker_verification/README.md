@@ -5,11 +5,11 @@
 | Model                                                        | Fix pre-train | Vox1-O    | Vox1-E    | Vox1-H   |
 | ------------------------------------------------------------ | ------------- | --------- | --------- | -------- |
 | [ECAPA-TDNN](https://drive.google.com/file/d/1kWmLyTGkBExTdxtwmrXoP4DhWz_7ZAv3/view?usp=sharing) | -             | 1.080     | 1.200     | 2.127    |
-| [HuBERT large](https://drive.google.com/file/d/1njofuGpidjy_jdbq7rIbQMIDyyPLoAjb/view?usp=sharing) | Yes           | 0.888     | 0.912     | 1.853    |
-| [Wav2Vec2.0 (XLSR)](https://drive.google.com/file/d/1izV48ebxs6re252ELiksuk6-RQov-gvE/view?usp=sharing) | Yes           | 0.915     | 0.945     | 1.895    |
-| [UniSpeech-SAT large](https://drive.google.com/file/d/1sOhutb3XG7_OKQIztqjePDtRMrxjOdSf/view?usp=sharing) | Yes           | 0.771     | 0.781     | 1.669    |
-| [WavLM Base](https://drive.google.com/file/d/1qVKHG7OzltELgkoAdFT1xXzu_hHXj3e8/view?usp=sharing) | Yes             | 0.84     | 0.928     | 1.758    |
-| [**WavLM large**](https://drive.google.com/file/d/1D-dPa5H6Y2ctb4SJ5n21kRkdR6t0-awD/view?usp=sharing) | Yes           | 0.75     | 0.764     | 1.548    |
+| [HuBERT large](https://valle.blob.core.windows.net/share/unispeech-sat/sv_fix/HuBERT_large_SV_fixed.th?sv=2020-08-04&st=2023-03-01T07%3A51%3A05Z&se=2033-03-02T07%3A51%3A00Z&sr=c&sp=rl&sig=QJXmSJG9DbMKf48UDIU1MfzIro8HQOf3sqlNXiflY1I%3D) | Yes           | 0.888     | 0.912     | 1.853    |
+| [Wav2Vec2.0 (XLSR)](https://valle.blob.core.windows.net/share/unispeech-sat/sv_fix/wav2vec2_xlsr_SV_fixed.th?sv=2020-08-04&st=2023-03-01T07%3A51%3A05Z&se=2033-03-02T07%3A51%3A00Z&sr=c&sp=rl&sig=QJXmSJG9DbMKf48UDIU1MfzIro8HQOf3sqlNXiflY1I%3D) | Yes           | 0.915     | 0.945     | 1.895    |
+| [UniSpeech-SAT large](https://valle.blob.core.windows.net/share/unispeech-sat/sv_fix/UniSpeech-SAT_large_SV_fixed.th?sv=2020-08-04&st=2023-03-01T07%3A51%3A05Z&se=2033-03-02T07%3A51%3A00Z&sr=c&sp=rl&sig=QJXmSJG9DbMKf48UDIU1MfzIro8HQOf3sqlNXiflY1I%3D) | Yes           | 0.771     | 0.781     | 1.669    |
+| [WavLM Base](https://valle.blob.core.windows.net/share/wavlm/sv_fix/wavlm_base_plus_nofinetune.pth?sv=2020-08-04&st=2023-03-01T07%3A51%3A05Z&se=2033-03-02T07%3A51%3A00Z&sr=c&sp=rl&sig=QJXmSJG9DbMKf48UDIU1MfzIro8HQOf3sqlNXiflY1I%3D) | Yes             | 0.84     | 0.928     | 1.758    |
+| [**WavLM large**](https://valle.blob.core.windows.net/share/wavlm/sv_fix/wavlm_large_nofinetune.pth?sv=2020-08-04&st=2023-03-01T07%3A51%3A05Z&se=2033-03-02T07%3A51%3A00Z&sr=c&sp=rl&sig=QJXmSJG9DbMKf48UDIU1MfzIro8HQOf3sqlNXiflY1I%3D) | Yes           | 0.75     | 0.764     | 1.548    |
 | [HuBERT large](https://drive.google.com/file/d/1nit9Z6RyM8Sdb3n8ccaglOQVNnqsjnui/view?usp=sharing) | No            | 0.585     | 0.654     | 1.342    |
 | [Wav2Vec2.0 (XLSR)](https://drive.google.com/file/d/1TgKro9pp197TCgIF__IlE_rMVQOk50Eb/view?usp=sharing) | No            | 0.564     | 0.605     | 1.23     |
 | [UniSpeech-SAT large](https://drive.google.com/file/d/10o6NHZsPXJn2k8n57e8Z_FkKh3V4TC3g/view?usp=sharing) | No            | 0.564 | 0.561 | 1.23 |
